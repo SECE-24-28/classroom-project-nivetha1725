@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Franklin Gothic Medium;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: lightgray;
+            font-size: 30px;
+        }
+
+        section {
+            display: none; 
+            padding: 40px 20px;
+        }
+
+        section.active {
+            display: block; 
+        }
+
+        h1, h2 {
+            margin: 20px 0 10px;
+        }
+
+        p {
+            margin: 10px 0 20px;
+          font-family: Bahnschrift SemiCondensed;
+         font-size: 20px;
+        }
+
+        img {
+            max-width: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .nav-buttons {
+            margin-top: 20px;
+        }
+
+        .nav-buttons button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background:darkblue;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 25px;
+        }
+
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .project {
+            background: white;
+            padding: 10px;
+            width: 200px;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+        }
+
+        .project img {
+            width: 100%;
+            border-radius: 3px;
+        }
+
+        a {
+            color: brightblue;
+            text-decoration: none;
+        }
+
+        footer {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <section id="home" class="active">
+        <img src="your photo" alt="My Photo"  width="400" height="300" style="border-radius: 0">
+        <h1>your name</h1>
+        <h2>Welcome to My Portfolio</h2>
+        <p>Hello! I'm learning HTML and CSS. Explore my work below!!!</p>
+        <div class="nav-buttons">
+            <button onclick="showSection('projects')">Projects</button>
+            <button onclick="showSection('about')">About Me</button>
+            <button onclick="showSection('contact')">Contact</button>
+        </div>
+    </section>
+
+  
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <img src="your photo" alt="Project 1">
+                <h3>Project 1</h3>
+                <a href="#">View</a>
+            </div>
+            <div class="project">
+                <img src="your photo" alt="Project 2">
+                <h3>Project 2</h3>
+                <a href="#">View</a>
+            </div>
+            <div class="project">
+                <img src="your photo" alt="Project 3">
+                <h3>Project 3</h3>
+                <a href="#">View</a>
+            </div>
+        </div>
+        <div class="nav-buttons">
+            <button onclick="showSection('home')">Home</button>
+            <button onclick="showSection('about')">About Me</button>
+            <button onclick="showSection('contact')">Contact</button>
+        </div>
+    </section>
+
+
+    <section id="about">
+        <h2><i>About Me</i></h2>
+        <p>Hello! I'm a beginner web developer learning HTML, CSS, and JavaScript. I enjoy creating simple web projects and improving my skills every day.    
+    <p>I started learning HTML, CSS, and JavaScript because I enjoy turning ideas into interactive websites. I love experimenting with colors, layouts, and simple animations to make my projects more engaging.</p>
+    
+    <p>In addition to coding, I have interests in  reading and design. These hobbies help me stay creative and bring unique ideas to my projects.</p>
+    
+    <p>My goal is to continue improving my skills, learn frameworks like React or Bootstrap in the future, and eventually build professional-level websites and applications.</p>
+    
+    <p>I’m always open to collaboration, learning new techniques, and taking on small projects to grow as a developer.</p>
+    </p>
+        <div class="nav-buttons">
+            <button onclick="showSection('home')">Home</button>
+            <button onclick="showSection('projects')">Projects</button>
+            <button onclick="showSection('contact')">Contact</button>
+        </div>
+    </section>
+
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:your mail">your mail</a></p>
+        <p>Phone: 9597934565</p>
+        <div class="nav-buttons">
+            <button onclick="showSection('home')">Home</button>
+            <button onclick="showSection('projects')">Projects</button>
+            <button onclick="showSection('about')">About Me</button>
+        </div>
+    </section>
+
+    <footer>
+       
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(sec => sec.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            window.scrollTo(0,0);
+        }
+    </script>
+
+</body>
+</html>
